@@ -1,0 +1,19 @@
+<%- include('partials/head.ejs') %>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a href="/">Shop</a></li>
+          <li class="main-header__item">
+            <a class="active" href="/admin/add-products">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1><%= product.name %></h1>
+      <h3>Price <%=product.price%></h3>
+<%- include('partials/end.ejs') %>

@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a href="/">Shop</a></li>
+          <li class="main-header__item">
+            <a class="active" href="/admin/add-products">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form class="product-form" action="/admin/add-product" method="POST">
+        <div class="form-control">
+          <label for="name">Product name</label>
+          <input type="text" name="name" id="name" required />
+          <br>
+          <label for="price">Price</label>
+          <input type="text" name="price" id="price" required />
+        </div>
+        <button type="submit">Add Product</button>
+      </form>
+<%- include('partials/end.ejs') %>

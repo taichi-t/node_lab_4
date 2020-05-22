@@ -1,0 +1,41 @@
+<%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/product.css">
+  </head>
+
+  <body>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+          <li class="main-header__item">
+            <a href="/admin/add-products">Add Product</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <% if(products.length > 0) { %>
+        <div class="grid">
+            <% for(let prod of products) { %>
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%=prod.name%></h1>
+                    </header>
+                    <div class="card__content">
+                        <h2 class="product__price">$<%=prod.price%></h2>
+                    </div>
+                    <div class="card__content">
+                      <!-- <a href="show-product/<%=prod.id%>">Details</a> -->
+                      <form action="show-product" method="POST">
+                        <button type="submit">Details</button>
+                        <input type="hidden" name="productId" value="<%=prod.id%>">
+                      </form>
+                  </div>
+                </article>
+            <% } %>
+        </div>
+      <% }else{ %>
+        <h1>No Products found</h1>
+      <% } %>
+<%- include('partials/end.ejs') %>
