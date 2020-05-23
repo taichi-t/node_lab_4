@@ -27,10 +27,11 @@
                     </div>
                     <div class="card__content">
                       <!-- <a href="show-product/<%=prod.id%>">Details</a> -->
-                      <form action="show-product" method="POST">
+                      <form action="/show-product" method="POST">
                         <button type="submit">Details</button>
                         <input type="hidden" name="productId" value="<%=prod.id%>">
                       </form>
+                     
                   </div>
                 </article>
             <% } %>

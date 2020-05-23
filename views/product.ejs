@@ -10,10 +10,18 @@
             <a class="active" href="/admin/add-products">Add Product</a>
           </li>
         </ul>
+   
       </nav>
     </header>
 
     <main>
+      <div>
       <h1><%= product.name %></h1>
       <h3>Price <%=product.price%></h3>
+      <hr>
+      <form action="/delete-product" method="POST">
+        <button type="delete">Delete</button>
+        <input type="hidden" name="productId" value="<%=product.id%>">
+      </form>
+    </div>
 <%- include('partials/end.ejs') %>
